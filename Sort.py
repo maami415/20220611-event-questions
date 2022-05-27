@@ -25,7 +25,7 @@ def sort(array):
             # pivotがarrayの最小値ならばpivotのみを切り離して同じ処理（再帰）を繰り返す
             if tail_idx == 0:
                 return [array[0]] + sort(array[1:])
-            # 先頭と末端からの探索がぶつかったらpivot以上と未満のグループに分ける
+            # 先頭および末端からの探索がぶつかったらpivot以上と未満のグループに分け、それぞれに対して同じ処理（再帰）を繰り返す
             elif head_idx >= tail_idx:
                 return sort(array[:tail_idx]) + sort(array[tail_idx:])
             else:
